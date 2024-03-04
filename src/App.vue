@@ -1,35 +1,24 @@
 <script>
 
-import {store} from './store.js';
-import axios from 'axios';
+import AppMain from './components/AppMain.vue'
 
 
 export default {
+    components:{
+        AppMain,
+    },
     data() {
         return {
-            store,
-            projects: [],
-            currentPage: 1,
-            LastPage: null
-        }
-    },
-    created(){
-        this.getProject()
-    },
-    methods: {
-        getProject() {
-            axios.get(`${this.store.baseUrl}/api/projects`).then((response) => {
-                console.log(response.data.results);
-            })
+            
         }
     }
 }
 </script>
 <template lang="">
     <div>
-        
+        <AppMain />
     </div>
 </template>
 <style lang="scss">
-    
+@use './styles/generals.scss';
 </style>
