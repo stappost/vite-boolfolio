@@ -20,6 +20,11 @@ export default {
                 <h4>{{project.name}}</h4>
                 <p class="card-text">{{project.description.substr(0, 50) }}...</p>
             </div>
+            <router-link class='d-flex justify-content-center' :to="{ name: 'single-project', params: {slug: project.slug} }">
+                <button class="btn btn-sm btn-primary my-4 p-2 text-white">
+                    Open Project
+                </button>
+            </router-link>
 
         </div>
     </div>

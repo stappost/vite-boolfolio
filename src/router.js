@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import HomeApp from './pages/HomeApp.vue';
 import AppProjects from './pages/AppProjects.vue';
+import SingleProject from './pages/SingleProject.vue';
 import NotFoundApp from './pages/NotFoundApp.vue';
 
 const router = createRouter({
@@ -13,9 +14,14 @@ const router = createRouter({
             component: HomeApp,
         },
         {
-            path: '/',
+            path: '/projects',
             name: 'projects',
             component: AppProjects,
+        },
+        {
+            path: '/projects/:slug',
+            name: 'single-project',
+            component: SingleProject,
         },
         {
             path: '/',
