@@ -16,7 +16,13 @@ import {store} from '../store.js'
                     <div class="d-flex justify-content-between">
                         <h2>Boolfolio</h2>
                         <ul class="list-unstyled d-flex pt-1">
-                            <li v-for="item, index in store.menuItem" :key="index" class="mx-3 fs-3">{{item.label}}</li>
+                            <li v-for="item, index in store.menuItem" :key="index" class="mx-3 fs-3">
+                                <router-link :to="{name: item.name}" class='text-decoration-none text_dark'>
+                                    {{item.label}}
+                                </router-link>
+                               
+                                     
+                            </li>
                         </ul>
                     </div>
 
@@ -35,8 +41,11 @@ import {store} from '../store.js'
             li{
                 cursor: pointer;
                 
-                &:hover{
-                    color: rgb(252, 105, 0);
+                .text_dark{
+                    color: rgb(46, 46, 46);
+                    &:hover{
+                        color: rgb(252, 105, 0);
+                    }
                 }
             }
         }

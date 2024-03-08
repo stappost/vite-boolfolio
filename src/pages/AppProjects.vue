@@ -2,7 +2,7 @@
 
 import {store} from '../store.js';
 import axios from 'axios';
-import ProjectCard from './ProjectCard.vue'
+import ProjectCard from '../components/ProjectCard.vue'
 
 export default {
     components:{
@@ -54,4 +54,4 @@ export default {
 </template>
 <style lang="scss" scoped>
     
-</style>
+</style>./AppMain.vue/index.js
