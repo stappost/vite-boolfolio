@@ -23,11 +23,15 @@ import axios from 'axios';
     }
 </script>
 <template lang="">
-         <div class="container">
+    <div class="container">
         <div class="row">
-            <div class="col-12 text-center mt-5" v-if="this.project != null">
+            <div class="col-12 mt-5 d-flex align-items-center flex-column" v-if="this.project != null">
                 <h2>{{ this.project.name }}</h2>
-                <p>{{ this.project.type ? this.project.type.name : 'Tipo assente' }}</p>
+                <h6>{{ this.project.in_team ? 'In team' : 'In solo' }}</h6>
+                <div class="image">
+                    <img :src="this.project.logo ? `${this.store.baseUrl}/storage/${this.project.logo}` : `${this.store.baseUrl}/placeholder/logo.jpeg`" alt="">
+
+                </div>
                 <div class="my-3">
                     Inizio Progetto: {{ this.project.start_project }}
                     <p>{{ this.project.finish_project ? 'Fine Progetto: ' + this.project.finish_project : '' }}</p>
@@ -37,7 +41,7 @@ import axios from 'axios';
             <div class="col-12">
                 <div class="d-flex justify-content-center">
                     <router-link :to="{name: 'projects'}">
-                                   <button class="btn btn-sm btn-primary"><-- Indietro</button>
+                                <button class="btn btn-sm btn-primary"><-- Indietro</button>
                     </router-link>
 
                     <button class="btn btn-sm btn-primary mx-1"><a
@@ -51,5 +55,11 @@ import axios from 'axios';
     </div>
 </template>
 <style lang="scss" scoped>
+.image{
+    max-width: 200px;
 
+    img{
+        width: 100%;
+    }
+}
 </style>

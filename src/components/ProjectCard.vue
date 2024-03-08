@@ -15,7 +15,9 @@ export default {
 <template lang="">
     <div class='col-4'>
         <div class="card my-2" style="width: 18rem;">
-            <img class="card-img-top" :src="project.logo != null ? `${store.baseUrl}/storage/${project.logo}` : `${store.baseUrl}/placeholder/logo.jpeg`" alt="Card image cap">
+            <div class="d-flex justify-content-center align-items-center pt-2">
+                <img class="card-img-top" :src="project.logo != null ? `${store.baseUrl}/storage/${project.logo}` : `${store.baseUrl}/placeholder/logo.jpeg`" alt="Card image cap">
+            </div>
             <div class="card-body">
                 <h4>{{project.name}}</h4>
                 <p class="card-text">{{project.description.substr(0, 50) }}...</p>
@@ -30,6 +32,9 @@ export default {
     </div>
 </template>
 
-<style lang="">
-    
+<style lang="scss" scoped>
+    img{
+        max-width:150px;
+        max-height: 150px
+    }
 </style>
